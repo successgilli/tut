@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejs todo list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Todo App</a>
+        </div>
+    </nav>
+    <section class="todo">
+        <div class="card sticky-action">
+            <div class="todo_head">
+                <span>My Tasks</span>
+                <a class="btn-floating btn-medium waves-effect waves-light red">
+                    <i id="addItem" data-toggle-input="close" class="material-icons">add</i>
+                </a>
+            </div>
+            <div id="item_div" class="card-action">
+                <ul id="toggleInput" class="collapsible">
+                    <li>
+                        <div class="collapsible-body">
+                            <div id="input_bucket">
+                                <input id="input" type="text">
+                                <a class="btn-floating btn-small waves-effect waves-light">
+                                    <i id="send" class="material-icons">send</i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <% tasks.forEach(function({ name, id }){ %>
+                    <div id="todo<%=id%>" class="todo_item">
+                        <p><%= name%></p>
+                        <div>
+                            <i data-btn-edit="edit" data-id="<%= id%>"  class="material-icons">edit</i>
+                            <i data-btn-delete="delete" data-id="<%= id%>" class="material-icons deleteIcons">delete</i>
+                        </div>
+                    </div>
+                <% }); %>   
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, {});
+        });
+    </script>
+    <script src="../js/index.js" type="module"></script>
+</body>
+</html>

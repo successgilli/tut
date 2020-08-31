@@ -1,0 +1,37 @@
+{
+  "name": "tut",
+  "version": "1.0.0",
+  "description": "tutorial repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/app.js",
+    "dev:server": "nodemon --exec babel-node server/app.js",
+    "build": "babel server -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/successgilli/tut.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/successgilli/tut/issues"
+  },
+  "homepage": "https://github.com/successgilli/tut#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "babel-node": "0.0.1-security",
+    "nodemon": "^2.0.4"
+  }
+}

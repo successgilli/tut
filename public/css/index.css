@@ -1,0 +1,67 @@
+h1{
+    color: red;
+}
+
+nav{
+    padding-left: 10px;
+}
+
+.card{
+    padding: 10px;
+}
+.todo_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+#input_bucket{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input{
+    max-width: 90%;
+}
+[data-btn-delete=delete]:hover, [data-btn-edit=edit]:hover{
+    font-size: 26px;
+}
+
+[data-btn-delete=delete]{
+    cursor: pointer;
+    transition: 0.2s ease;
+    color: red;
+}
+[data-btn-edit=edit]{
+    transition: 0.2s ease;
+    color: green;
+    cursor: pointer;
+}
+.todo_item{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo_item:nth-child(even){
+    background-color: rgb(245, 240, 240);
+}
+.todo{
+    width: 50%;
+    max-width: 1000px;
+    
+    margin: auto;
+    margin-top: 50px;
+}
+
+@media(max-width: 700px){
+    .collapsible-body{
+        padding: 10px;
+    }
+    .card{
+        padding: 5px;
+    }
+    .todo{
+        width: 90%;
+    }
+}
